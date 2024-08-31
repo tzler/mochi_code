@@ -2,6 +2,8 @@
 
 We introduce **MOCHI** (Multiview Obect Consistency in Humans and Image models), a benchmark to evaluate the alignment between humans and image models on 3D shape understanding. 
 
+<img src="assets/teaser.png" alt="teaser"/>
+
 To download dataset from huggingface, install relevant huggingface libraries
 ```
 pip install datasets huggingface_hub
@@ -18,7 +20,6 @@ benchmark = load_dataset("tzler/MOCHI")['train']
 
 # there are 2019 trials let's pick one 
 i_trial = benchmark[1879]
-
 ```
 
 Here, `i_trial` is a dictionary with trial-related data including human (`human` and `RT`) and model (`DINOv2G`) performance measures: 
