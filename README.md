@@ -1,6 +1,6 @@
 ## MOCHI: Multiview Object Consistency in Humans and Image models
 
-We introduce **MOCHI** (Multiview Obect Consistency in Humans and Image models), a benchmark to evaluate the alignment between humans and image models on 3D shape understanding. 
+We introduce a benchmark to evaluate the alignment between humans and image models on 3D shape understanding: **M**ultiview **O**bject **C**onsistency in **H**umans and **I**mage models (**MOCHI**)
 
 <img src="assets/teaser.png" alt="teaser"/>
 
