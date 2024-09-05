@@ -4,12 +4,23 @@ We introduce a benchmark to evaluate the alignment between humans and image mode
 
 <img src="assets/teaser.png" alt="teaser"/>
 
-To download dataset from huggingface, install relevant huggingface libraries
+This repo contains all code and data used to evaluate models on MOCHI, compare model to human behavior, and visualize results.  
+
+- `scripts/model_evaluation.ipynb`: notebook that can be used to evaluate DINOv2, CLIP, and MAE models
+- `scripts/results.ipynb`: notebook that can be used to compare model and human data + visualize results  
+- `scripts/scripts/results.ipynb`: example script to analyze data and visualize a single trial
+
+The model and human results generated and used by the scripts above are in `assets/benchmark.csv`. 
+
+The images in MOCHI can be downloaded as a huggingface dataset which can be accessed in a few lines of code.
+
+First, download relevant libraries
+
 ```
 pip install datasets huggingface_hub
 ```
 
-and download MOCHI 
+then download MOCHI 
 
 ```python
 
@@ -74,10 +85,8 @@ import pandas
 
 # load data the github repo we just cloned  
 df = pandas.read_csv('MOCHI/assets/benchmark.csv')
-
-
+# extract trial info with the index from huggingface repo above
 df.loc[i_trial_index]['trial']
-
 ```
 
 returns the trial `shapegen2527`, which is the same as the huggingface dataset for this index. 
