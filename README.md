@@ -19,7 +19,10 @@ from datasets import load_dataset
 benchmark = load_dataset("tzler/MOCHI")['train']
 
 # there are 2019 trials let's pick one 
-i_trial = benchmark[1879]
+i_trial_index = 1879
+
+# and extract these data
+i_trial = benchmark[i_trial_index]
 ```
 
 Here, `i_trial` is a dictionary with trial-related data including human (`human` and `RT`) and model (`DINOv2G`) performance measures: 
@@ -58,3 +61,23 @@ for i_plot in range(len(i_trial['images'])):
 plt.show()
 ```
 <img src="assets/example_trial.png" alt="example trial"/>
+
+The huggingface dataset contains all of the images, while the `benchmark.csv` file in this repo, contains all the relevant model data. They have the same structure, e.g., 
+
+```
+git clone https://github.com/tzler/MOCHI.git
+```
+
+```python
+
+import pandas 
+
+# load data the github repo we just cloned  
+df = pandas.read_csv('MOCHI/assets/benchmark.csv')
+
+
+df.loc[i_trial_index]['trial']
+
+```
+
+returns the trial `shapegen2527`, which is the same as the huggingface dataset for this index. 
