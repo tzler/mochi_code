@@ -76,7 +76,7 @@ plt.show()
 The huggingface dataset contains all of the images, while the `benchmark.csv` file in this repo, contains all the relevant model data. They have the same structure, e.g., 
 
 ```
-git clone https://github.com/tzler/MOCHI.git
+git clone https://github.com/tzler/mochi_code.git
 ```
 
 ```python
@@ -84,7 +84,7 @@ git clone https://github.com/tzler/MOCHI.git
 import pandas 
 
 # load data the github repo we just cloned  
-df = pandas.read_csv('MOCHI/assets/benchmark.csv')
+df = pandas.read_csv('mochi_code/assets/benchmark.csv')
 # extract trial info with the index from huggingface repo above
 df.loc[i_trial_index]['trial']
 ```
